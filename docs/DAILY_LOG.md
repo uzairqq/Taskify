@@ -1,5 +1,17 @@
 # Daily Log
 
+## 2026-01-02
+
+Done:
+
+- Initialized backend solution + API project
+- Enabled OpenAPI + Swagger UI
+- Set launch profile to open /swagger
+
+Next:
+
+- Add Domain/Application/Infrastructure projects
+
 ## 2026-01-01 Thursday
 
 Done:
