@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using Taskify.Api.Data;
 using Taskify.Api.Repositories;
 using Taskify.Api.Services;
 
@@ -10,6 +12,9 @@ namespace Taskify.Api
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddScoped<ITaskItemRepository, TaskItemRepository>();
             builder.Services.AddScoped<ITaskItemService, TaskItemService>();
