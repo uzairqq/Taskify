@@ -1,11 +1,22 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
+import { getTasks } from './api/tasks'
+import type { TaskItem } from './types/taskItem'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [tasks, setTasks] = useState<TaskItem[]>([])
+  const [apiStatus, setApiStatus] = useState<'loading' | 'ok' | 'error'>('loading')
+
+  useEffect(() => {
+    getTasks()
+      .then(setTasks)
+      .then(() => setApiStatus('ok'))
+      .catch(() => setApiStatus('error'))
+  }, [])
 
   return (
     <>
@@ -19,6 +30,12 @@ function App() {
           <h1>Get started</h1>
           <p>
             Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
+          </p>
+          <p>
+            API:{' '}
+            {apiStatus === 'loading' && 'connecting...'}
+            {apiStatus === 'ok' && `${tasks.length} tasks loaded`}
+            {apiStatus === 'error' && 'failed — is backend running?'}
           </p>
         </div>
         <button
