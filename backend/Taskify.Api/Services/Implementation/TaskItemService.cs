@@ -25,7 +25,7 @@ namespace Taskify.Api.Services.Implementation
 
         public async Task AddTaskItemAsync(TaskItem taskItem)
         {
-            taskItem.CreatedAt = DateTime.Now;
+            taskItem.CreatedAt = DateTime.UtcNow;
             await _taskItemRepository.AddAsync(taskItem);
         }
 
