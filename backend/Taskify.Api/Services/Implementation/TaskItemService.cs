@@ -25,12 +25,16 @@ namespace Taskify.Api.Services.Implementation
 
         public async Task AddTaskItemAsync(TaskItem taskItem)
         {
+            if (string.IsNullOrWhiteSpace(taskItem.Title))
+                throw new ArgumentException("Title is required");
+
             taskItem.CreatedAt = DateTime.UtcNow;
             await _taskItemRepository.AddAsync(taskItem);
         }
 
         public async Task UpdateTaskItemAsync(int id, TaskItem taskItem)
         {
+            taskItem.UpdateAt = DateTime.UtcNow; 
             await _taskItemRepository.UpdateAsync(id, taskItem);
         }
 

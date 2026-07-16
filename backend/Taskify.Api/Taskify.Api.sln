@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.37502.11 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taskify.Api", "Taskify.Api.csproj", "{49EAB2DE-6FD3-4325-9D27-588772045F0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taskify.Api.Tests", "..\Taskify.Api.Tests\Taskify.Api.Tests.csproj", "{F21CE129-4A70-4CEE-AF0A-1D214F758CD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{49EAB2DE-6FD3-4325-9D27-588772045F0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49EAB2DE-6FD3-4325-9D27-588772045F0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49EAB2DE-6FD3-4325-9D27-588772045F0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F21CE129-4A70-4CEE-AF0A-1D214F758CD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F21CE129-4A70-4CEE-AF0A-1D214F758CD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F21CE129-4A70-4CEE-AF0A-1D214F758CD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F21CE129-4A70-4CEE-AF0A-1D214F758CD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
